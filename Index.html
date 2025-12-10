@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HackVerse 2026 — School Hackathon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="brand">HackVerse ’26</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#prizes">Prizes</a>
+        <a href="#faqs">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="section hero">
+    <div class="container hero-inner">
+      <h1 class="hero-title">HACKVERSE 2026</h1>
+      <p class="hero-sub">Code • Create • Conquer</p>
+      <div class="countdown" aria-label="Countdown to event">
+        <div class="cd"><span id="dd">00</span><small>Days</small></div>
+        <div class="cd"><span id="hh">00</span><small>Hours</small></div>
+        <div class="cd"><span id="mm">00</span><small>Minutes</small></div>
+        <div class="cd"><span id="ss">00</span><small>Seconds</small></div>
+      </div>
+      <a class="btn" href="#register">Register Now</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">ABOUT THE EVENT</h2>
+
+      <div class="card">
+        <p>
+          Building on the spirit of innovation, <strong>HackVerse ’25</strong> is a flagship
+          24-hour hackathon hosted by the <strong>Department of CSE, University College of Engineering, Osmania University</strong>.
+          This high-energy offline event challenges participants to prototype solutions, build apps or ML models,
+          and solve real-world problems in a collaborative environment.
+        </p>
+        <p>
+          Problem statements are revealed on the spot to test creativity, speed, and technical skills.
+          Teams will have <strong>24 hours</strong> to transform ideas into actionable solutions.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat card">
+          <div class="stat-num" data-target="300" data-suffix="+">0</div>
+          <div class="stat-label">Participants</div>
+        </div>
+        <div class="stat card">
+          <div class="stat-num" data-target="24">0</div>
+          <div class="stat-label">Hours</div>
+        </div>
+        <div class="stat card">
+          <div class="stat-num" data-target="100" data-suffix="+">0</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat card">
+          <div class="stat-num" data-target="100000" data-prefix="₹" data-format="comma" data-suffix="+">0</div>
+          <div class="stat-label">Prize Pool</div>
+        </div>
+        <div class="stat card">
+          <div class="stat-text">UCE, Osmania University</div>
+          <div class="stat-label">Venue</div>
+        </div>
+        <div class="stat card">
+          <div class="stat-text">Offline</div>
+          <div class="stat-label">Mode</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracks" class="section">
+    <div class="container">
+      <h2 class="section-title">TRACKS</h2>
+
+      <div class="tracks">
+        <article class="track card">
+          <div class="track-art">
+            <svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true">
+              <circle cx="32" cy="32" r="26" fill="none" stroke="white" stroke-width="2"/>
+              <path d="M24 36c0-4 3-7 8-7 4 0 6-2 6-5s-3-5-6-5-6 2-7 4M31 12v40" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="track-title">FinTech</h3>
+          <p class="track-tag">Finance</p>
+        </article>
+
+        <article class="track card">
+          <div class="track-art">
+            <svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true">
+              <circle cx="32" cy="32" r="26" fill="none" stroke="white" stroke-width="2"/>
+              <path d="M18 32h28M32 18v28" stroke="white" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="track-title">MedTech</h3>
+          <p class="track-tag">Healthcare</p>
+        </article>
+
+        <article class="track card">
+          <div class="track-art">
+            <svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true">
+              <path d="M12 44c10-2 18-12 20-20 2 8 10 18 20 20-7 4-13 6-20 6s-13-2-20-6z" fill="none" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="track-title">AgroTech</h3>
+          <p class="track-tag">Agriculture</p>
+        </article>
+
+        <article class="track card">
+          <div class="track-art">
+            <svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true">
+              <path d="M8 20l24-8 24 8-24 8-24-8zM32 28v20" stroke="white" stroke-width="2" fill="none"/>
+              <path d="M12 26v16c6 4 14 6 20 6" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="track-title">EdTech</h3>
+          <p class="track-tag">Education</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="section">
+    <div class="container">
+      <h2 class="section-title">HACKVERSE ’26</h2>
+      <p class="section-sub">CODE · CREATE · CONQUER</p>
+
+      <div class="timeline">
+        <div class="line"></div>
+
+        <div class="tl-item left">
+          <div class="dot"></div>
+          <div class="tl-card card">
+            <span class="date-badge">Oct 20</span>
+            <h3>Registrations Start</h3>
+            <p>Begin your journey to HackVerse 2026</p>
+          </div>
+        </div>
+
+        <div class="tl-item right">
+          <div class="dot"></div>
+          <div class="tl-card card">
+            <span class="date-badge">Nov 18</span>
+            <h3>Registration Closes</h3>
+            <p>Last chance to secure your spot</p>
+          </div>
+        </div>
+
+        <div class="tl-item left">
+          <div class="dot"></div>
+          <div class="tl-card card">
+            <span class="date-badge">Nov 23</span>
+            <h3>Shortlisting Announcement</h3>
+            <p>Selected teams announced</p>
+          </div>
+        </div>
+
+        <div class="tl-item right">
+          <div class="dot"></div>
+          <div class="tl-card card">
+            <span class="date-badge">Nov 23</span>
+            <h3>Waitlist Announcement</h3>
+            <p>Waitlisted teams notified</p>
+          </div>
+        </div>
+
+        <div class="tl-item left">
+          <div class="dot"></div>
+          <div class="tl-card card">
+            <span class="date-badge">Nov 25</span>
+            <h3>Final RSVP</h3>
+            <p>Confirm your participation</p>
+          </div>
+        </div>
+
+        <div class="tl-item right">
+          <div class="dot"></div>
+          <div class="tl-card card">
+            <span class="date-badge">Jan 10</span>
+            <h3>Hackathon Kickoff</h3>
+            <p>Team formation, problem statements, hacking begins</p>
+          </div>
+        </div>
+
+        <div class="tl-item left">
+          <div class="dot"></div>
+          <div class="tl-card card">
+            <span class="date-badge">Jan 11</span>
+            <h3>Results & Closing</h3>
+            <p>Final demos, judging, and awards</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prizes" class="section">
+    <div class="container">
+      <h2 class="section-title">PRIZES PER TRACK</h2>
+
+      <div class="prizes">
+        <div class="prize card">
+          <div class="emoji">🏆</div>
+          <h3>Grand Prize</h3>
+          <p class="money">₹15,000</p>
+        </div>
+        <div class="prize card">
+          <div class="emoji">🥈</div>
+          <h3>Runner Up</h3>
+          <p class="money">₹10,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="section">
+    <div class="container">
+      <h2 class="section-title">REGISTER</h2>
+      <p class="muted">Fill the form below to participate in HackVerse 2025.</p>
+      
+      <a class="btn" 
+         href="https://docs.google.com/forms/d/e/1FAIpQLSe7jq7PxJIotorHbQ2bBhuZHzazW7BCU6OmSPhw0pJKhNbtMw/viewform?usp=header" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        Click Here to Register
+      </a>
+
+    </div>
+  </section>
+
+  <section id="faqs" class="section">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+
+      <div class="faq">
+        <details class="card"><summary>What is HackVerse?</summary>
+          <p>HackVerse is a 24-hour inter-university hackathon organized by the CSE Department of UCE, Osmania University, focused on solving real-world problems through tech.</p>
+        </details>
+        <details class="card"><summary>How can we register?</summary>
+          <p>Click the "Click Here to Register" button in the Register section. You’ll receive a confirmation email after submission.</p>
+        </details>
+        <details class="card"><summary>Will food and accommodation be provided?</summary>
+          <p>Food and refreshments are provided during the event. Accommodation is not required as it’s an on-campus overnight event with supervision.</p>
+        </details>
+        <details class="card"><summary>Who can participate?</summary>
+          <p>Undergraduate students from any college and branch. Teams of 1–4 members.</p>
+        </details>
+        <details class="card"><summary>Is there a participation fee?</summary>
+          <p>No, participation is free.</p>
+        </details>
+        <details class="card"><summary>Can students from different colleges form a team?</summary>
+          <p>Yes, cross-college teams are welcome.</p>
+        </details>
+        <details class="card"><summary>What are the judging criteria?</summary>
+          <p>Innovation, Technical Complexity, Presentation, and Practical Impact.</p>
+        </details>
+        <details class="card"><summary>Will there be prizes for winners?</summary>
+          <p>Yes — cash prizes and goodies, plus special category awards.</p>
+        </details>
+        <details class="card"><summary>Who can we contact for queries?</summary>
+          <p>Email: <a href="mailto:hackverse2025@gmail.com">hackverse2025@gmail.com</a> · Phone: +91 98765 43210</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <div class="footer-brand">HackVerse ’25</div>
+        <p>
+          HackVerse is a student-run 24-hour hackathon celebrating creativity and collaboration.
+          Dive into software, AI/ML, and product design to build impactful solutions.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#prizes">Prizes</a></li>
+          <li><a href="#faqs">FAQ</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:hackverse2025@gmail.com">hackverse2025@gmail.com</a></p>
+        <p>+91 98765 43210</p>
+        <p><strong>Venue</strong><br>
+          University College of Engineering, Osmania University<br>
+          Department of Computer Science & Engineering<br>
+          Hyderabad, India
+        </p>
+      </div>
+
+      <div class="footer-map">
+        <h4>Map</h4>
+        <div class="map-wrap card">
+          <iframe
+            title="Map to UCE OU CSE Department"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=University+College+of+Engineering+Osmania+University+CSE+Department&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="container tiny">
+      <div class="copyright">
+        © <span id="year"></span> HackVerse. Made by <strong>Mujtaba and Ahmed</strong>.
+      </div>
+      <a class="tiny-link" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

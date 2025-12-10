@@ -1,0 +1,206 @@
+/* ===========================
+   THEME / TOKENS
+   =========================== */
+:root{ /* Defines global CSS variables (tokens) for easy theme management. */
+  --bg:#06080c;        /* Very dark blue/almost black background. */
+  --text:#e8eefc;       /* Light, slightly blue-tinted text color. */
+  --muted:#8fa3b8;      /* Secondary, muted text color. */
+  --card:#11141b;       /* Slightly lighter background for cards/sections. */
+  --line:#1a2230;       /* Color for divider lines. */
+  --accent:#6bd6ff;     /* Bright blue/cyan for primary accents (the "blue glow"). */
+  --accent-2:#8ea7ff;   /* Secondary blue for gradients. */
+  /* Defines a complex box shadow for cards: inner 1px white ring + outer blue glow. */
+  --ring:0 0 0 1px rgba(255,255,255,.08) inset, 0 10px 28px rgba(107,214,255,.18);
+}
+
+*{box-sizing:border-box} /* Sets all elements to use the border-box model (padding/border inside element width/height). */
+html,body{margin:0;height:100%} /* Removes default margin and ensures full height. */
+body{
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; /* Sets font stack, favoring Poppins. */
+  color:var(--text); /* Applies the light text color. */
+  background:var(--bg); /* Applies the dark background color. */
+  line-height:1.6; /* Sets comfortable line spacing. */
+  scroll-behavior:smooth; /* Enables smooth scrolling when clicking anchor links. */
+}
+
+/* Ensure anchors stop below sticky header */
+section, .footer { scroll-margin-top: 90px; } /* Adds space above sections so sticky nav doesn't hide titles when linking. */
+
+/* Background starfield canvas sits behind everything */
+#stars{
+  position:fixed; inset:0; z-index:-1; /* Fixes canvas to cover the whole viewport, behind all content. */
+  /* Creates two radial gradients (blue/cyan) for a subtle background glow effect. */
+  background:radial-gradient(1000px 600px at 10% -10%, rgba(142,167,255,.08), transparent 60%),
+             radial-gradient(900px 500px at 110% 10%, rgba(107,214,255,.06), transparent 60%),
+             var(--bg); /* Default background color fallback. */
+}
+
+/* ===========================
+   NAV / HEADER
+   =========================== */
+.site-header{
+  position:sticky; top:0; z-index:50; /* Makes the header stick to the top when scrolling. */
+  background:rgba(6,8,12,.65); /* Semi-transparent background color. */
+  backdrop-filter:saturate(140%) blur(8px); /* Blurs content visible beneath the nav bar (the trendy "frosted glass" effect). */
+  border-bottom:1px solid rgba(255,255,255,.06); /* Thin light divider at the bottom. */
+}
+.nav-wrap{
+  max-width:1100px; margin:auto; /* Centers the navigation content and sets max width. */
+  display:flex; align-items:center; justify-content:space-between; /* Lays out logo (left) and navigation links (right). */
+  padding:.75rem 1rem; /* Vertical and horizontal padding. */
+}
+.brand{font-weight:800; letter-spacing:.3px} /* Styles the hackathon logo text. */
+.nav a{
+  color:var(--text); text-decoration:none; margin:0 .6rem; /* Styles navigation links. */
+  padding:.45rem .7rem; border-radius:12px; opacity:.9; /* Adds padding, rounded corners, and slight transparency. */
+}
+.nav a:hover{background:rgba(255,255,255,.06); opacity:1} /* Hover effect: slightly brighter background, full opacity. */
+
+/* ===========================
+   SECTIONS / LAYOUT
+   =========================== */
+.section{padding:64px 0} /* Standard vertical padding for main sections. */
+.container{width:min(1100px,92vw); margin:auto} /* Responsive container: Max width 1100px, but always at least 92% of viewport width (92vw). */
+.section-title{
+  text-align:center; margin:0 0 1rem 0; /* Centered, bold title. */
+  font-size:clamp(1.5rem,1.2rem + 2vw,2.4rem); font-weight:800; /* Responsive font size. */
+  letter-spacing:.5px;
+}
+.section-sub{color:var(--muted); text-align:center; margin-top:-.3rem} /* Styles sub-heading text. */
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); /* Subtle gradient for depth. */
+  border:1px solid rgba(255,255,255,.09); /* Light, subtle border. */
+  border-radius:18px; padding:1.1rem; /* Large rounded corners and padding. */
+  box-shadow:var(--ring); /* Applies the glow/ring shadow defined in :root. */
+}
+
+.btn{
+  display:inline-block; margin-top:1rem; /* Button styling. */
+  padding:.9rem 1.2rem; border-radius:14px;
+  font-weight:700; letter-spacing:.2px;
+  color:#03131d; text-decoration:none; /* Dark text for contrast against the bright background. */
+  background:linear-gradient(90deg,var(--accent),var(--accent-2)); /* Bright blue gradient background. */
+  box-shadow:0 15px 32px rgba(107,214,255,.22); /* Large shadow for a lifted, prominent look. */
+}
+
+/* ===========================
+   HERO
+   =========================== */
+.hero{padding-top:96px; text-align:center}
+.hero-title{font-size:clamp(2rem,1.5rem + 4vw,3.6rem); margin:0 0 .2rem 0; font-weight:800} /* Very large, responsive title text. */
+.hero-sub{color:var(--muted); margin:0 0 1rem}
+.countdown{display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap} /* Uses flexbox to center and space countdown boxes. */
+.cd{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:.7rem 1rem; text-align:center; min-width:86px} /* Styles the individual countdown time boxes. */
+.cd span{display:block; font-weight:800; font-size:1.4rem} /* Styles the large numbers (Days/Hours/etc.). */
+.cd small{display:block; color:var(--muted); margin-top:.15rem; font-size:.8rem} /* Styles the small labels (Days/Hours/etc.). */
+
+/* ===========================
+   ABOUT + STATS
+   =========================== */
+.stats{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; /* Grid layout: 3 columns, equal width. */
+  margin-top:1rem;
+}
+.stat{display:grid; place-items:center; padding:1.2rem} /* Centers content inside each stat card. */
+.stat-num{font-size:1.8rem; font-weight:800} /* Styles the animated number. */
+.stat-text{font-size:1.2rem; font-weight:700} /* Styles non-numerical stats (Venue/Mode). */
+.stat-label{color:var(--muted); font-size:.9rem} /* Styles the label below the number. */
+/* Responsive breakpoints for the stats grid. */
+@media (max-width:800px){ .stats{grid-template-columns:1fr 1fr} } /* Switches to 2 columns on medium screens. */
+@media (max-width:520px){ .stats{grid-template-columns:1fr} } /* Switches to 1 column on small screens. */
+
+/* ===========================
+   TRACKS (static, no hover)
+   =========================== */
+.tracks{
+  display:grid; gap:1rem;
+  grid-template-columns:repeat(4,minmax(0,1fr)); /* Grid layout: 4 columns for tracks. */
+}
+.track{padding:1.4rem; text-align:center}
+.track-art{display:grid; place-items:center; height:140px; border-radius:14px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); margin-bottom:.8rem} /* Styles the box containing the SVG icons. */
+.track-title{margin:.2rem 0 .1rem; font-weight:800}
+.track-tag{color:var(--muted); margin:0}
+/* Responsive breakpoints for the tracks grid. */
+@media (max-width:900px){ .tracks{grid-template-columns:repeat(2,1fr)} } /* Switches to 2 columns on medium screens. */
+@media (max-width:560px){ .tracks{grid-template-columns:1fr} } /* Switches to 1 column on small screens. */
+
+/* ===========================
+   TIMELINE / ROADMAP
+   =========================== */
+.timeline{position:relative; margin:2rem 0}
+.timeline .line{
+  position:absolute; left:50%; top:0; bottom:0; width:2px; /* The vertical line runs down the center of the timeline. */
+  background:linear-gradient(var(--accent), rgba(255,255,255,.05));
+  transform:translateX(-50%);
+  box-shadow:0 0 20px rgba(107,214,255,.3), inset 0 0 6px rgba(107,214,255,.6); /* Applies a glow effect to the line. */
+}
+.tl-item{position:relative; display:flex; margin:2rem 0}
+.tl-item.left{justify-content:flex-start} /* Pushes cards to the left of the screen center. */
+.tl-item.right{justify-content:flex-end} /* Pushes cards to the right of the screen center. */
+.tl-item .dot{
+  position:absolute; left:50%; transform:translate(-50%, 8px); /* Centers the dot on the vertical line. */
+  width:16px; height:16px; border-radius:50%; /* Makes the dot a circle. */
+  background:white; box-shadow:0 0 16px rgba(255,255,255,.9), 0 0 30px rgba(107,214,255,.6); /* White dot with strong white/blue glow. */
+  border:3px solid var(--bg); /* Creates a dark ring around the dot to contrast with the line. */
+}
+.tl-card{width:min(460px, 86vw)} /* Styles the card that holds the timeline event details. */
+.tl-card h3{margin:.2rem 0 .2rem; font-weight:800}
+.tl-card p{margin:0; color:var(--muted)}
+.date-badge{
+  display:inline-block; padding:.3rem .6rem; border-radius:999px; font-weight:700; font-size:.85rem;
+  background:#fff; color:#000; /* Styles the black-on-white date label for high contrast. */
+}
+@media (max-width:760px){ /* On small screens, force all cards to the left. */
+  .tl-item{justify-content:flex-start}
+  .tl-card{width:100%}
+}
+
+/* ===========================
+   PRIZES
+   =========================== */
+.prizes{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem} /* Two-column layout for prizes. */
+.prize{text-align:center; padding:2rem}
+.prize .emoji{font-size:2rem}
+.prize .money{margin:.3rem 0 0; font-weight:800}
+@media (max-width:640px){ .prizes{grid-template-columns:1fr} } /* Switches to 1 column on small screens. */
+
+/* ===========================
+   REGISTER (Google Form)
+   =========================== */
+.iframe-wrap iframe{width:100%; height:680px; border:0; border-radius:12px} /* Styles the registration form iframe container. */
+
+/* Center the button */
+#register .container { text-align: center; }
+
+/* ===========================
+   FAQ
+   =========================== */
+.faq details{margin:.6rem 0}
+.faq summary{cursor:pointer; font-weight:700}
+.faq .card{padding:1rem 1.2rem} /* Styles the individual FAQ accordions. */
+
+/* ===========================
+   FOOTER + MAP
+   =========================== */
+.footer{border-top:1px solid rgba(255,255,255,.08); padding:50px 0 16px}
+.footer-grid{
+  display:grid; gap:1.2rem;
+  grid-template-columns:2fr 1fr 1.2fr 1.8fr; /* Defines 4 columns with different widths. */
+}
+.footer-brand{font-weight:800; margin-bottom:.5rem}
+.footer-links ul{list-style:none; padding:0; margin:0}
+.footer-links a{color:var(--text); text-decoration:none; opacity:.9}
+.footer-links a:hover{opacity:1; text-decoration:underline}
+.footer-contact a{color:var(--accent)}
+.map-wrap{padding:0}
+.map-wrap iframe{width:100%; height:220px; border:0; border-radius:12px} /* Styles the map iframe. */
+.tiny{display:flex; justify-content:space-between; align-items:center; gap:.8rem; padding-top:.6rem; border-top:1px solid rgba(255,255,255,.08); margin-top:1rem; color:var(--muted)} /* Styles the bottom copyright/back-to-top line. */
+.tiny-link{color:var(--text); text-decoration:none}
+/* Responsive breakpoints for the footer grid. */
+@media (max-width:980px){
+  .footer-grid{grid-template-columns:1fr 1fr} /* Switches to 2 columns on large tablets/small desktops. */
+}
+@media (max-width:560px){
+  .footer-grid{grid-template-columns:1fr} /* Switches to 1 column on phones. */
+}
